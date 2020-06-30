@@ -12,10 +12,11 @@ stage('testing pipeline'){
               
               script {
                   env.FILENAME = readFile 'Script_Name_tmp.txt'
-                if ("${env.FILENAME}" =~ *.zip) {
+                if ("${env.FILENAME}" == "something") {
                     echo 'Its a zip file'
                 } else {
                     echo 'Its a jmx file'
+                    echo "${env.FILENAME}"
                     
                      }
                 }
