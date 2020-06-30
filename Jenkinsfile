@@ -9,7 +9,7 @@ stage('testing pipeline'){
               sh "cat Script_Path.txt"
               sh "chmod 777 Shell.sh"
               sh "./Shell.sh"
-              echo "$(cat Script_Path.txt)"
+              echo "\$(cat Script_Path.txt)"
               
               script {
                   env.FILENAME = readFile 'Script_Name_tmp.txt'
