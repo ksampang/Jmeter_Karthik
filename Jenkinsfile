@@ -24,7 +24,7 @@ stage('testing pipeline'){
                     env.Session_Name = readFile 'Script_Path.txt'
                     
                      }
-                  sh "echo 'http://100.111.89.228:3000/d/JMeter_Dashboard_Summary_NewDBSystem/jmeter_dashboard_summary_newdbsystem?orgId=1&from=now-15m&to=now&var-SessionName1=$(cat Script_Path.txt)'"
+                  sh "echo 'http://100.111.89.228:3000/d/JMeter_Dashboard_Summary_NewDBSystem/jmeter_dashboard_summary_newdbsystem?orgId=1&from=now-15m&to=now&var-SessionName1=\"$(cat Script_Path.txt)\"'"
                 }
              }
                     
