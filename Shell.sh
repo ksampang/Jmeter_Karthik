@@ -8,13 +8,13 @@ File=Script_Name_tmp.txt
 if grep -q .zip "$File";
 then
      
-     echo "Hooray!!It's available"
+#      echo "Hooray!!It's available"
      v=$(cat Script_Name_tmp.txt)
      v2=${v::-4}
      echo $v2>>Script_Name_final.txt
      echo "It was a zip file "
 else
-     echo "Oops!!Not available"
+#      echo "Oops!!Not available"
      cp  Script_Name_tmp.txt Script_Name_final.txt
      echo "It was a jmx file"
 fi
