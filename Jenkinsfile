@@ -15,8 +15,9 @@ stage('testing pipeline'){
                 } else {
                     echo 'I execute elsewhere'
                      }
-              }
                 }
-        }
+             }
+          }
+      }
 }
 
