@@ -11,7 +11,7 @@ stage('testing pipeline'){
               sh "./Shell.sh"
               echo " Iam Here"
               sh "pwd"
-              echo "\$(cat Script_Path.txt)"
+              echo $(cat /var/jenkins_home/workspace/Test_Pipeline/Script_Path.txt)
               
               script {
                   env.FILENAME = readFile 'Script_Name_tmp.txt'
