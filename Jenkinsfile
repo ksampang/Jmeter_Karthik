@@ -14,6 +14,7 @@ stage('testing pipeline'){
                     echo 'I only execute on the master branch'
                 } else {
                     echo 'I execute elsewhere'
+                    echo 'Pulling...' + env.BRANCH_NAME
                      }
                 }
              }
