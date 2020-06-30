@@ -12,7 +12,7 @@ stage('testing pipeline'){
               
               script {
                   env.FILENAME = readFile 'Script_Name_tmp.txt'
-                if (${env.FILENAME}.contains('zip')) {
+                if (env.FILENAME.contains('zip')) {
                     echo 'Its a zip file'
                 } else {
                     echo 'Its a jmx file'
