@@ -17,7 +17,7 @@ stage('testing pipeline'){
                 } else {
                     echo 'Its a jmx file'
                     
-                  var=$(cat Script_Path.txt)  
+                  var=$(< Script_Path.txt)  
                     
                     
                      }
