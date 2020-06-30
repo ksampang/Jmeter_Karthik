@@ -28,5 +28,7 @@ fi
 #      cp  Script_Name_tmp.txt Script_Name_final.txt
 #      echo "It was a jmx file"
 # fi
+echo "This is before Edit$(cat Script_Name_final.txt)"
 sed "s/^[ \t]*//" -i Script_Name_final.txt
 cat Script_Name_final.txt
+echo "This is after Edit$(cat Script_Name_final.txt)"
