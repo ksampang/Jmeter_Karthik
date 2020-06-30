@@ -10,8 +10,8 @@ stage('testing pipeline'){
               sh "chmod 777 Shell.sh"
               sh "./Shell.sh"
               echo " Iam Here"
-              sh "pwd"
-              echo $(cat /var/jenkins_home/workspace/Test_Pipeline/Script_Path.txt)
+              sh "ls"
+             // echo $(cat /var/jenkins_home/workspace/Test_Pipeline/Script_Path.txt)
               
               script {
                   env.FILENAME = readFile 'Script_Name_tmp.txt'
