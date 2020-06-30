@@ -10,6 +10,7 @@ stage('testing pipeline'){
               sh "chmod 777 Shell.sh"
               sh "./Shell.sh"
               echo " Iam Here"
+              sh "pwd"
               echo "\$(cat Script_Path.txt)"
               
               script {
