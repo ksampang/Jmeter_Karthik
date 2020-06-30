@@ -17,13 +17,15 @@ stage('testing pipeline'){
                 } else {
                     echo 'Its a jmx file'
                     
-                    out.info("This is just a test message")
+                    
                     
                     
                      }
                 }
              }
-          }
+                    out.info("This is just a test message")
+           }
+        
       }
 }
 
