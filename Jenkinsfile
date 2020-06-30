@@ -21,9 +21,10 @@ stage('testing pipeline'){
                     
                     
                      }
+                  out.info("This is just a test message")
                 }
              }
-                    out.info("This is just a test message")
+                    
            }
         
       }
