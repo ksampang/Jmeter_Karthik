@@ -10,7 +10,7 @@ stage('testing pipeline'){
               sh "./Shell.sh"
               
               script {
-                if (env.BRANCH_NAME == 'master') {
+                if (env.BRANCH_NAME == 'null') {
                     echo 'I only execute on the master branch'
                 } else {
                     echo 'I execute elsewhere'
