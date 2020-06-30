@@ -1,4 +1,4 @@
 #!/bin/bash
 
-path=$(<config.txt)
+path=$(<Script_Path.txt)
 echo "$path"
