@@ -4,8 +4,10 @@ path=$(<Script_Path.txt)
 echo > Script_Name_tmp.txt
 echo > Script_Name_final.txt
 echo $path | rev | cut -d'/' -f 1 | rev>>Script_Name_tmp.txt;cat Script_Name_tmp.txt
-if grep -q .zip "$Script_Name_tmp.txt";
+File=Script_Name_tmp.txt
+if grep -q .zip "$File";
 then
+     
      echo "Hooray!!It's available"
      v=$(cat Script_Name_tmp.txt)
      v2=${v::-4}
