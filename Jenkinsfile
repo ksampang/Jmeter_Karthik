@@ -11,7 +11,7 @@ stage('testing pipeline'){
               sh "./Shell.sh"
               
               script {
-                if ($(cat Script_Name_tmp.txt) =~ *.zip) {
+                if (`cat Script_Name_tmp.txt` =~ *.zip) {
                     echo 'Its a zip file'
                 } else {
                     echo 'Its a jmx file'
