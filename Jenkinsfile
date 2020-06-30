@@ -4,7 +4,9 @@ pipeline {
 stage('testing pipeline'){
           steps{
                sh "echo Hi"
-               sh "/.Script_Format_Handler.sh"
+              sh "echo ${Script_Path}>>Script_Path.txt"
+              sh "cat Script_Path.txt"
+              
               }
                 }
         }
