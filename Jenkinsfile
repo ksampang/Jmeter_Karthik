@@ -11,7 +11,8 @@ stage('testing pipeline'){
               sh "./Shell.sh"
               
               script {
-                if (`cat Script_Name_tmp.txt` =~ *.zip) {
+                  env.FILENAME = readFile 'Script_Name_tmp.txt'
+                if ("${env.FILENAME}" =~ *.zip) {
                     echo 'Its a zip file'
                 } else {
                     echo 'Its a jmx file'
