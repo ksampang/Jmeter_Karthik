@@ -11,11 +11,11 @@ stage('testing pipeline'){
               sh "./Shell.sh"
               
               script {
-                if (env.BRANCH_NAME == null) {
-                    echo 'I only execute on the master branch'
+                if ($(cat Script_Name_tmp.txt) =~ *.zip) {
+                    echo 'Its a zip file'
                 } else {
-                    echo 'I execute elsewhere'
-                    echo 'Pulling...' + env.BRANCH_NAME
+                    echo 'Its a jmx file'
+                    
                      }
                 }
              }
