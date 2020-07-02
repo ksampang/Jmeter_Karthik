@@ -1,24 +1,9 @@
 pipeline {
-    agent any
-    stages {
-stage('testing pipeline'){
-          steps{
-               sh "echo Hi"
-             
-              script {
-	      		import groovy.sql.Sql;	
-                        def sql = Sql.newInstance("jdbc:mysql://100.111.89.249:3306/jmeter", 'root', 'Performance$123', 'com.mysql.jdbc.Driver');
-		                      sql.execute("show databases;");
-		                      sql.close();
-		
-		
-                    
-                     }
-                
-                }
-             
-                    
-           }
-        
-      }
+    import groovy.sql.Sql
+node{
+    Class.forName("com.mysql.jdbc.Driver")
+    def sql = Sql.newInstance("jdbc:mysql://100.111.89.249:3306/test_db", "root","Performance$123", "com.mysql.jdbc.Driver")
+    def rows = sql.execute "show databases;"
+    echo rows.dump()
+}
 }
