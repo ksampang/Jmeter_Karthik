@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+    stages {
+stage('testing pipeline'){
+          steps{
+               sh "echo Hi"
+             
+              script {
+                        def sql = Sql.newInstance("jdbc:mysql://100.111.89.249:3306/jmeter", 'root', 'Performance$123', 'com.mysql.jdbc.Driver');
+		                      sql.execute("show databases;");
+		                      sql.close();
+		
+		
+                    
+                     }
+                
+                }
+             
+                    
+           }
+        
+      }
+}
