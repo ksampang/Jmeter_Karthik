@@ -1,6 +1,6 @@
 node{
 
-    @NonCPS
+   
     def getSqlInstance() {
      
         def sql = Sql.newInstance(
