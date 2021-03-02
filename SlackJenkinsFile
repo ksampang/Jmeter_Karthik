@@ -1,0 +1,39 @@
+pipeline {
+ 
+//1. Creating agent using image iad.ocir.io/osvcstage/development/osvcpsr/agent-kubectl-helm:latest
+agent {
+    kubernetes {
+      yaml """
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    jenkins: agent
+    jenkins/label: jenkins-agent
+}
+}
+
+ stages {
+ 
+   //2. Write parameters to file propertiesfile.txt
+    stage('Test Stage') {
+    
+    sh ' echo I am executing the file' 
+    
+    }
+    
+    }
+    
+     post {
+    always {
+     
+           sh 'echo I am Inside post build'
+           slackSend channel: 'debug_jenkins_psr_test', message: 'I am Sending thi smessage from the Jenkins Run'      
+ 
+        
+      }
+    }
+
+    
+}    
+    
